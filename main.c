@@ -18,8 +18,9 @@ void livro_exibe(pLivro *biblio, int qtde);
 void livro_desaloca(pLivro *biblio);
 
 
+
 int main(){
-    setlocale(LC_ALL, "Portuguese");
+    setlocale(LC_ALL, "pt_BR.UTF-8");
     int qtde;
     pLivro *biblio;
     scanf("%d", &qtde);
@@ -41,25 +42,28 @@ pLivro* livro_aloc(int qtde){
 
 void livro_ler(pLivro *biblio, int qtde){
     for(int i = 0; i < qtde; i++){
+        fflush(stdin);
         fgets(biblio[i].nome, 50, stdin);
-        getchar();
+        fflush(stdin);
         fgets(biblio[i].isbn, 50, stdin);
-        getchar();
+        fflush(stdin);
         scanf("%f", &biblio[i].preco);
+        fflush(stdin);
         scanf("%d", &biblio[i].score);
+        fflush(stdin);
         fgets(biblio[i].editora, 50, stdin);
-        getchar();
     } 
 }
 
 void livro_exibe(pLivro *biblio, int qtde){
+    setlocale(LC_ALL, "pt_BR.UTF-8");
     for(int i = 0; i < qtde; i++){
         printf("Livro %d\n", i+1);
-        printf("Nome: %s\n", biblio[i].nome);
-        printf("ISBn: %s\n", biblio[i].isbn);
-        printf("Preço: R$ %.2f\n", biblio[i].preco);
+        printf("Nome: %s", biblio[i].nome);
+        printf("ISBN: %s", biblio[i].isbn);
+        printf("Preco: R$ %.2f\n", biblio[i].preco);
         printf("Score: %d\n", biblio[i].score);
-        printf("Editora: %s\n\n", biblio[i].editora);
+        printf("Editora: %s\n", biblio[i].editora);
     } 
 
 }
