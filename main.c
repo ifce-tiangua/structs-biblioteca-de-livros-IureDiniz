@@ -52,7 +52,7 @@ void livro_ler(pLivro *biblio, int qtde){
         scanf("%f", &biblio[i].preco);
         //getchar();
         scanf("%d", &biblio[i].score);
-        getchar();
+        fflush(stdin);
         fgets(biblio[i].editora, 50, stdin);
         
     } 
