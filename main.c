@@ -61,7 +61,7 @@ void livro_ler(pLivro *biblio, int qtde){
 void livro_exibe(pLivro *biblio, int qtde){
     setlocale(LC_ALL, "pt_BR.UTF-8");
     for(int i = 0; i < qtde; i++){
-        printf("Livro %d\n", i+1);
+        printf("Livro %d:\n", i+1);
         printf("Nome: %s", biblio[i].nome);
         printf("ISBN: %s", biblio[i].isbn);
         printf("Preço: R$ %.2f\n", biblio[i].preco);
