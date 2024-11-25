@@ -26,11 +26,13 @@ int main(){
     scanf("%d", &qtde);
     
     biblio = livro_aloc(qtde);
+    if(qtde == 0){
+        printf("Sem livros");
+    }else{
+        livro_ler(biblio, qtde);
 
-    livro_ler(biblio, qtde);
-    
-    livro_exibe(biblio, qtde);
-
+        livro_exibe(biblio, qtde);
+    }
     livro_desaloca(biblio);
     return 0;
 }
@@ -42,16 +44,17 @@ pLivro* livro_aloc(int qtde){
 
 void livro_ler(pLivro *biblio, int qtde){
     for(int i = 0; i < qtde; i++){
-        fflush(stdin);
+        getchar();
         fgets(biblio[i].nome, 50, stdin);
-        fflush(stdin);
+        getchar();
         fgets(biblio[i].isbn, 50, stdin);
-        fflush(stdin);
+        getchar();
         scanf("%f", &biblio[i].preco);
-        fflush(stdin);
+        getchar();
         scanf("%d", &biblio[i].score);
-        fflush(stdin);
+        getchar();
         fgets(biblio[i].editora, 50, stdin);
+        
     } 
 }
 
@@ -61,7 +64,7 @@ void livro_exibe(pLivro *biblio, int qtde){
         printf("Livro %d\n", i+1);
         printf("Nome: %s", biblio[i].nome);
         printf("ISBN: %s", biblio[i].isbn);
-        printf("Preco: R$ %.2f\n", biblio[i].preco);
+        printf("Preço: R$ %.2f\n", biblio[i].preco);
         printf("Score: %d\n", biblio[i].score);
         printf("Editora: %s\n", biblio[i].editora);
     } 
