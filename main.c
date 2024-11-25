@@ -44,7 +44,7 @@ pLivro* livro_aloc(int qtde){
 
 void livro_ler(pLivro *biblio, int qtde){
     for(int i = 0; i < qtde; i++){
-        fflush(stdin);
+        getchar();
         fgets(biblio[i].nome, 50, stdin);
         //getchar();
         fgets(biblio[i].isbn, 50, stdin);
@@ -52,7 +52,7 @@ void livro_ler(pLivro *biblio, int qtde){
         scanf("%f", &biblio[i].preco);
         //getchar();
         scanf("%d", &biblio[i].score);
-        fflush(stdin);
+        getchar();
         fgets(biblio[i].editora, 50, stdin);
         
     } 
