@@ -24,6 +24,7 @@ int main(){
     int qtde;
     pLivro *biblio;
     scanf("%d", &qtde);
+    clearInputBuffer();
     
     biblio = livro_aloc(qtde);
     if(qtde == 0){
@@ -48,9 +49,10 @@ void livro_ler(pLivro *biblio, int qtde){
         fgets(biblio[i].nome, 50, stdin);
         //clearInputBuffer();
         fgets(biblio[i].isbn, 50, stdin);
+        fflush(stdin);
         //clearInputBuffer();
         scanf("%f", &biblio[i].preco);
-        //clearInputBuffer();
+        clearInputBuffer();
         scanf("%d", &biblio[i].score);
         clearInputBuffer();
         fgets(biblio[i].editora, 50, stdin);
@@ -75,6 +77,10 @@ void livro_desaloca(pLivro *biblio){
     free(biblio);
 }
 
+void clearInputBuffer() {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) {}
+}
 void clearInputBuffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF) {}
