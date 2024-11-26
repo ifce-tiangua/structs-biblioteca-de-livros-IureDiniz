@@ -81,7 +81,3 @@ void clearInputBuffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF) {}
 }
-void clearInputBuffer() {
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF) {}
-}
