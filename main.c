@@ -54,7 +54,6 @@ void livro_ler(pLivro *biblio, int qtde){
         scanf("%d", &biblio[i].score);
         getchar();
         fgets(biblio[i].editora, 50, stdin);
-        printf("");
     } 
 }
 
